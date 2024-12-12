@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 22:19:32 by jgrigorj         ###   ########.fr       */
+/*   Created: 2024/07/19 17:39:39 by jgrigorj          #+#    #+#             */
+/*   Updated: 2024/07/19 17:51:01 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	error(void)
+int	ft_toupper(int c)
 {
-	write(2, "Error\n", 6);
-	exit (1);
+	if (c >= 'a' && c <= 'z')
+	{
+		c = c - 32;
+	}
+	return (c);
 }
 
-void	check_input(int argc, char **argv)
-{
-	
-}
-
-int main(int argc, char **argv)
-{
-	check_input(argc, argv)
-}
+// #include <stdio.h>
+// int main(void)
+// {
+// 	char ch[] = {'a', 'B', 'c', 'Y', 'z', '1', '!'};
+// 	int i = 0;
+// 	while (i < 7)
+// 	{
+// 		printf("%c,", ft_toupper(ch[i]));
+// 		i++;
+// 	}
+// 	return (0);
+// }

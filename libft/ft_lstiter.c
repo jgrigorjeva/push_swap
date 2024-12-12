@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 22:19:32 by jgrigorj         ###   ########.fr       */
+/*   Created: 2024/10/01 16:38:08 by jgrigorj          #+#    #+#             */
+/*   Updated: 2024/10/01 16:40:48 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	error(void)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	write(2, "Error\n", 6);
-	exit (1);
-}
+	t_list	*ptr;
 
-void	check_input(int argc, char **argv)
-{
-	
-}
-
-int main(int argc, char **argv)
-{
-	check_input(argc, argv)
+	ptr = NULL;
+	ptr = lst;
+	while (ptr)
+	{
+		f(ptr -> content);
+		ptr = ptr -> next;
+	}
 }

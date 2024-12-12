@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 22:19:32 by jgrigorj         ###   ########.fr       */
+/*   Created: 2024/07/12 15:45:21 by jgrigorj          #+#    #+#             */
+/*   Updated: 2024/09/18 17:47:41 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	error(void)
+#include "libft.h"
+// therefore, by manipulating ptr, we modify s
+void	ft_bzero(void *s, size_t n)
 {
-	write(2, "Error\n", 6);
-	exit (1);
+	unsigned char	*ptr;
+	size_t			i;
+
+	i = 0;
+	ptr = (unsigned char *)s;
+	while (i < n)
+	{
+		ptr[i] = '\0';
+		i++;
+	}
 }
 
-void	check_input(int argc, char **argv)
-{
-	
-}
-
-int main(int argc, char **argv)
-{
-	check_input(argc, argv)
-}
+// int	main(void)
+// {
+// 	char	s[100] = "Hello world";
+// 	size_t n = 3;
+	// 
+// 	ft_bzero(s + 3, n); // zero after three characters
+// 	printf("%s", s);
+// 	return (0);
+// }

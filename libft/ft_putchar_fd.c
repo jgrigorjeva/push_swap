@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 22:19:32 by jgrigorj         ###   ########.fr       */
+/*   Created: 2024/09/26 21:10:41 by jgrigorj          #+#    #+#             */
+/*   Updated: 2024/09/26 21:11:05 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	error(void)
+void	ft_putchar_fd(char c, int fd)
 {
-	write(2, "Error\n", 6);
-	exit (1);
-}
-
-void	check_input(int argc, char **argv)
-{
-	
-}
-
-int main(int argc, char **argv)
-{
-	check_input(argc, argv)
+	write(fd, &c, 1);
 }

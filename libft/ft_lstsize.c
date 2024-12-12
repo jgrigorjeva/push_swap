@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 22:19:32 by jgrigorj         ###   ########.fr       */
+/*   Created: 2024/10/01 14:11:51 by jgrigorj          #+#    #+#             */
+/*   Updated: 2024/10/01 14:21:33 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	error(void)
+int	ft_lstsize(t_list *lst)
 {
-	write(2, "Error\n", 6);
-	exit (1);
-}
+	size_t	count;
+	t_list	*ptr;
 
-void	check_input(int argc, char **argv)
-{
-	
-}
-
-int main(int argc, char **argv)
-{
-	check_input(argc, argv)
+	count = 0;
+	ptr = NULL;
+	ptr = lst;
+	while (ptr)
+	{
+		count++;
+		ptr = ptr -> next;
+	}
+	return (count);
 }

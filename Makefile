@@ -2,7 +2,8 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 SRC_DIR = src/
-SRCS = main.c utils.c  # Source files
+# Source files
+SRCS = main.c utils.c  stack_init_end.c operations.c 
 SRC = $(addprefix $(SRC_DIR), $(SRCS))
 OBJ = $(SRC:.c=.o)			# Object files in the root directory
 NAME = push_swap			# Output binary (project's name)

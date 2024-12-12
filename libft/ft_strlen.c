@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 22:19:32 by jgrigorj         ###   ########.fr       */
+/*   Created: 2024/07/12 15:33:39 by jgrigorj          #+#    #+#             */
+/*   Updated: 2024/09/19 17:34:56 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	error(void)
+size_t	ft_strlen(const char *str)
 {
-	write(2, "Error\n", 6);
-	exit (1);
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		++i;
+	}
+	return (i);
 }
 
-void	check_input(int argc, char **argv)
-{
-	
-}
-
-int main(int argc, char **argv)
-{
-	check_input(argc, argv)
-}
+// #include <stdio.h>
+// 
+// int	main(void)
+// {
+// 	char	str[] = "";
+	// 
+// 	printf("%i\n", ft_strlen(str));
+// 	return (0);
+// }

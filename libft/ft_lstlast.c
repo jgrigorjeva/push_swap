@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 22:19:32 by jgrigorj         ###   ########.fr       */
+/*   Created: 2024/10/01 14:11:51 by jgrigorj          #+#    #+#             */
+/*   Updated: 2024/10/01 14:37:41 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	error(void)
+t_list	*ft_lstlast(t_list *lst)
 {
-	write(2, "Error\n", 6);
-	exit (1);
-}
+	t_list	*ptr;
 
-void	check_input(int argc, char **argv)
-{
-	
-}
-
-int main(int argc, char **argv)
-{
-	check_input(argc, argv)
+	if (!lst)
+		return (lst);
+	ptr = NULL;
+	ptr = lst;
+	while (ptr -> next)
+	{
+		ptr = ptr -> next;
+	}
+	return (ptr);
 }

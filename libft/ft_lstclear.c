@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 22:19:32 by jgrigorj         ###   ########.fr       */
+/*   Created: 2024/10/01 16:46:49 by jgrigorj          #+#    #+#             */
+/*   Updated: 2024/10/01 16:47:48 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	error(void)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	write(2, "Error\n", 6);
-	exit (1);
-}
+	t_list	*temp;
 
-void	check_input(int argc, char **argv)
-{
-	
-}
-
-int main(int argc, char **argv)
-{
-	check_input(argc, argv)
+	temp = NULL;
+	while (*lst)
+	{
+		temp = (*lst)-> next;
+		del((*lst)-> content);
+		free(*lst);
+		*lst = temp;
+	}
 }

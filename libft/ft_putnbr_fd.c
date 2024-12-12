@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 22:19:32 by jgrigorj         ###   ########.fr       */
+/*   Created: 2024/09/27 15:26:27 by jgrigorj          #+#    #+#             */
+/*   Updated: 2024/09/27 15:29:11 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	error(void)
+void	ft_putnbr_fd(int n, int fd)
 {
-	write(2, "Error\n", 6);
-	exit (1);
-}
+	int				i;
+	char			str[12];
+	unsigned int	num;
 
-void	check_input(int argc, char **argv)
-{
-	
-}
-
-int main(int argc, char **argv)
-{
-	check_input(argc, argv)
+	i = 0;
+	if (n == 0)
+		write(fd, "0", 1);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		num = (unsigned int)(-n);
+	}
+	else
+		num = (unsigned int)n;
+	while (num)
+	{
+		str[i] = (num % 10) + '0';
+		num = num / 10;
+		++i;
+	}
+	while (i)
+	{
+		write(fd, &str[i - 1], 1);
+		--i;
+	}
 }
