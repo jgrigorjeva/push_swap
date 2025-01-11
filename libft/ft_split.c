@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 17:19:54 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/10/01 14:21:12 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:55:34 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,10 +122,11 @@ char	**ft_split(char const *s, char c)
 // int 	main(void)
 // {
 // 	int i = 0;
-	// 
+
 // 	while (ft_split("hello!", ' ')[i])
 // 	{
 // 		printf("%s", ft_split("hello!", ' ')[i]);
+// 		i++;
 // 	}
 // 	return (0);
 // }

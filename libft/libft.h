@@ -6,13 +6,17 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:28:46 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/10/01 22:56:52 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/11 17:16:12 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
+// get_next_line: Check if BUFFER_SIZE is already defined.
+//  If not, define a default value.
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5  // Default value if not specified at compile time
+# endif
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -51,6 +55,14 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+// get_next_line
+char	*get_next_line(int fd);
+char	*ft_strjoin_ed(char const *s1, char const *s2, int len2);
+size_t	ft_strlen(const char *str);
+size_t	check_endline(char *buffer);
+// ft_printf
+int		ft_printf(const char *str, ...);
+
 
 // Define the structure with typedef
 typedef struct s_list

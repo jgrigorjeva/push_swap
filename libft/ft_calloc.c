@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:48:02 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/09/24 17:02:06 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:52:48 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (!nmemb || !size)
 	{
-		ptr = malloc(1);
+		ptr = malloc(0);
 		if (!ptr)
 			return (NULL);
 		return (ptr);
@@ -36,7 +36,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 // int main(void) 
 // {
 //     int i;
-//     int n = 2147483647; // Fixed size of the array
+//     int n = 21474836; // Fixed size of the array
 //     int *arr;
 
 //     // Allocate memory using calloc for 'n' integers

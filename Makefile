@@ -2,38 +2,36 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 SRC_DIR = src/
-# Source files
-SRCS = main.c utils.c  stack_init_end.c operations.c 
+SRCS = main.c stack_init_end.c operations.c
 SRC = $(addprefix $(SRC_DIR), $(SRCS))
-OBJ = $(SRC:.c=.o)			# Object files in the root directory
-NAME = push_swap			# Output binary (project's name)
-LIBFT_DIR = libft			# Directory for libft
-LIBFT = $(LIBFT_DIR)/libft.a  # Compiled libft library
+OBJ = $(SRC:.c=.o)
+NAME = push_swap
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
-# Default target: Build the project
 all: $(NAME)
 
-# Build the project binary
 $(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
-# Compile source files into object files
 %.o: $(SRC_DIR)%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Build libft
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-# Clean object files and binary for the project
 clean:
 	rm -f $(OBJ)
 	$(MAKE) -C $(LIBFT_DIR) clean
 
-# Full clean, including libft library and output binary
 fclean: clean
 	rm -f $(NAME)
 	$(MAKE) -C $(LIBFT_DIR) fclean
 
-# Rebuild everything from scratch
 re: fclean all
+
+debug:
+	@echo "LIBFT = $(LIBFT)"
+	@echo "OBJ = $(OBJ)"
+
+.PHONY: all clean fclean re debug
