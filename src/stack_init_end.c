@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize.c                                       :+:      :+:    :+:   */
+/*   stack_init_end.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:32:39 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 19:15:20 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/13 21:11:25 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ t_node	*create_node(int data)
 	return (node);
 }
 
-void	push(t_stack *stack, int data)
+int	push(t_stack *stack, int data)
 {
 	t_node	*new_node;
 
 	new_node = create_node(data);
 	if (!new_node)
-		return ;
+		return (0);
 	if (stack->head == NULL)
 	{
 		stack->head = new_node;
@@ -57,6 +57,7 @@ void	push(t_stack *stack, int data)
 		stack->head = new_node;
 	}
 	stack->size++;
+	return (1);
 }
 
 int	pop(t_stack *stack)

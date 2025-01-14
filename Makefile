@@ -2,7 +2,7 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 SRC_DIR = src/
-SRCS = main.c stack_init_end.c operations.c
+SRCS = main.c stack_init_end.c checks.c operations.c normalization.c sort.c
 SRC = $(addprefix $(SRC_DIR), $(SRCS))
 OBJ = $(SRC:.c=.o)
 NAME = push_swap
