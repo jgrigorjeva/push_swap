@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 20:10:24 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/13 20:29:36 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/18 19:27:43 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,57 @@ void	check_input(int argc, char **argv, int *array)
 	size = argc - 1;
 	populate_array(argv, array, size);
 	check_duplicates(size, array);
+}
+
+int	check_stack_order(t_stack *stack)
+{
+	int		i;
+	t_node	*current;
+
+	i = 0;
+	if (!stack || !stack->head)
+		return (0);
+	current = stack->head;
+	while (current)
+	{
+		if (current->data != i)
+			return (0);
+		current = current->next;
+		i++;
+	}
+	ft_printf("stack is in order\n");
+	return (1);
+}
+
+int	check_stack_order_general(t_stack *stack)
+{
+	t_node	*current;
+	int		expected_value;
+	int		smallest_value;
+
+	if (!stack || !stack->head) // Check for NULL stack or empty stack
+		return (0);
+
+	// Find the smallest value in the stack
+	smallest_value = stack->head->data;
+	current = stack->head->next;
+	while (current)
+	{
+		if (current->data < smallest_value)
+			smallest_value = current->data;
+		current = current->next;
+	}
+
+	// Check that values are in order starting from the smallest value
+	current = stack->head;
+	expected_value = smallest_value;
+	while (current)
+	{
+		if (current->data != expected_value)
+			return (0); // Stack is not in order
+		current = current->next;
+		expected_value++;
+	}
+
+	return (1); // Stack is in order
 }

@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 18:45:32 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/12/11 19:10:29 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/22 19:25:28 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,23 +45,43 @@ void	reverse_rotate(t_stack *stack)
 }
 
 // push a (i.e. move node from top of stack b to top of stack a)
-void	push_a(t_stack *stack_a, t_stack *stack_b)
+void	push_a(t_stacks *stacks)
 {
 	int	data;
 
-	if (stack_b->head == NULL)
+	if (stacks->stack_b->head == NULL)
 		return ;
-	data = pop(stack_b);
-	push(stack_a, data);
+	data = pop(stacks->stack_b);
+	push(stacks->stack_a, data);
 }
 
 // push b (i.e. move node from top of stack a to top of stack b)
-void	push_b(t_stack *stack_a, t_stack *stack_b)
+void	push_b(t_stacks *stacks)
 {
 	int	data;
 
-	if (stack_a->head == NULL)
+	if (stacks->stack_a->head == NULL)
 		return ;
-	data = pop(stack_a);
-	push(stack_b, data);
+	data = pop(stacks->stack_a);
+	push(stacks->stack_b, data);
+}
+
+void	swap(t_stack *stack)
+{
+	t_node	*first;
+	t_node	*second;
+
+	if (!stack || stack->size < 2)
+		return ;
+	first = stack->head;
+	second = first->next;
+	first->next = second->next;
+	if (second->next)
+		second->next->prev = first;
+	else
+		stack->tail = first;
+	second->prev = NULL;
+	second->next = first;
+	first->prev = second;
+	stack->head = second;
 }

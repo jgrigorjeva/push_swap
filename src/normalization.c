@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   normalisation.c                                    :+:      :+:    :+:   */
+/*   normalization.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:20:51 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/13 20:05:48 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/20 19:20:51 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_pair *a, t_pair *b)
+static void	swap_val(t_pair *a, t_pair *b)
 {
 	t_pair	temp;
 
@@ -36,7 +36,7 @@ int	sort_pair_array(t_pair *pairs, int size)
 		{
 			if (pairs[j].value > pairs[j + 1].value)
 			{
-				swap(&pairs[j], &pairs[j + 1]);
+				swap_val(&pairs[j], &pairs[j + 1]);
 				swapped++;
 			}
 			j++;

@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/13 21:38:49 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/22 19:21:28 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,15 @@ int	populate_stack(int *array, t_stack *stack, int size)
 
 void	init_and_sort_stack(int *array, int size)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stacks *stacks;
 
-	stack_a = init_stack();
-	if (!stack_a)
+	stacks = init_stacks();
+	if (!stacks)
 		return ;
-	if (!populate_stack(array, stack_a, size))
-		free_stack(stack_a);
-	stack_b = init_stack();
-	if (!stack_b)
-	{
-		free_stack(stack_a);
-		return ;
-	}
-	sort_stack(stack_a, stack_b);
-	free_stack(stack_a);
-	free_stack(stack_b);
+	if (!populate_stack(array, stacks->stack_a, size))
+		free_stacks(stacks);
+	sort_stack(stacks, size);
+	free_stacks(stacks);
 }
 
 int	main(int argc, char **argv)
