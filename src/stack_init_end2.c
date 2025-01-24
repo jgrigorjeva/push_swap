@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 19:07:54 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/22 19:15:09 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/23 16:01:20 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,28 @@ void	free_stacks(t_stacks *stacks)
 	free_stack(stacks->stack_a);
 	free_stack(stacks->stack_b);
 	free(stacks);
+}
+
+t_ops	*init_operations(void)
+{
+	t_ops	*ops;
+
+	ops = malloc(sizeof(t_ops));
+	if (!ops)
+		return (NULL);
+	ops->ra = 0;
+	ops->rb = 0;
+	ops->rra = 0;
+	ops->rrb = 0;
+	ops->rr = 0;
+	ops->rrr = 0;
+	ops->combined_ops = 0;
+	return (ops);
+}
+
+void	free_operations(t_ops *ops)
+{
+	if (!ops)
+		return ;
+	free (ops);
 }

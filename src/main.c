@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/22 19:21:28 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/24 00:09:34 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	init_and_sort_stack(int *array, int size)
 		return ;
 	if (!populate_stack(array, stacks->stack_a, size))
 		free_stacks(stacks);
-	sort_stack(stacks, size);
+	sort_stack(stacks);
 	free_stacks(stacks);
 }
 
@@ -75,14 +75,14 @@ int	main(int argc, char **argv)
 	check_input(argc, argv, array);
 	normalize_array(array, size);
 
-	// // see the array
-	int i = 0;
-	while (i < size)
-	{
-		ft_printf("%i, ", array[i]);
-		i++;
-	}
-	ft_printf("\n");
+	// // // see the array
+	// int i = 0;
+	// while (i < size)
+	// {
+	// 	ft_printf("%i, ", array[i]);
+	// 	i++;
+	// }
+	// ft_printf("\n");
 	init_and_sort_stack(array, size);
 
 	free (array);

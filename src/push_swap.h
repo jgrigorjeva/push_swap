@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 18:13:26 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/22 19:26:50 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/23 23:24:38 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,24 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-typedef struct	s_stacks
+typedef struct s_stacks
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		operation_count;
 }	t_stacks;
+
+// to store operations for the current node
+typedef struct s_operations
+{
+	int	ra;
+	int	rb;
+	int	rra;
+	int	rrb;
+	int	rr;
+	int	rrr;
+	int	combined_ops;
+}	t_ops;
 
 // handling input array
 typedef struct s_pair
@@ -56,6 +68,9 @@ int			push(t_stack *stack, int data);
 int			pop(t_stack *stack);
 void		free_stacks(t_stacks *stacks);
 void		free_stack(t_stack *stack);
+t_ops	*init_operations(void);
+void	free_operations(t_ops *ops);
+
 
 // operations
 void		rotate(t_stack *stack);
@@ -82,6 +97,6 @@ int			get_target_index(t_stack *stack, int num);
 
 // main processes
 void		init_and_sort_stack(int *array, int size);
-void		sort_stack(t_stacks *stacks, int size);
+void		sort_stack(t_stacks *stacks);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 20:10:24 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/18 19:27:43 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/23 23:36:57 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,6 @@ int	check_stack_order_general(t_stack *stack)
 		current = current->next;
 		expected_value++;
 	}
-
+	ft_printf("stack is in order");
 	return (1); // Stack is in order
 }
