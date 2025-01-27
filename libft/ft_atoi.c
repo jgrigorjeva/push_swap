@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 21:09:38 by jgrigorj          #+#    #+#             */
-/*   Updated: 2024/09/21 21:37:06 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/26 21:48:16 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ int	ft_atoi(const char *nptr)
 	{
 		++i;
 	}
-	if (nptr[i] == 45)
+	if (nptr[i] == '-')
 	{
 		sign = -1;
 		++i;
 	}
-	else if (nptr[i] == 43)
+	else if (nptr[i] == '+')
 		++i;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{

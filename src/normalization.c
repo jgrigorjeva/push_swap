@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 20:20:51 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/20 19:20:51 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/27 20:28:20 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ int	sort_pair_array(t_pair *pairs, int size)
 	return (swapped);
 }
 
-
-void	normalize_array(int *array, int size)
+int	normalize_array(int *array, int size)
 {
 	t_pair	*pairs;
 	int		i;
@@ -61,9 +60,7 @@ void	normalize_array(int *array, int size)
 		i++;
 	}
 	if (!sort_pair_array(pairs, size))
-	{
-		ft_printf("The input is already ordered. You should terminate the program here.\n");
-	}
+		return (1);
 	i = 0;
 	while (i < size)
 	{
@@ -71,4 +68,5 @@ void	normalize_array(int *array, int size)
 		i++;
 	}
 	free(pairs);
+	return (0);
 }

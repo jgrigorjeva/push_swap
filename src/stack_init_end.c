@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 17:32:39 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/13 21:11:25 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/27 19:19:49 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	pop(t_stack *stack)
 	if (stack->head)
 		stack->head->prev = NULL;
 	else
-		stack->tail = NULL; // Stack is now empty
+		stack->tail = NULL;
 	free(temp);
 	stack->size--;
 	return (data);
