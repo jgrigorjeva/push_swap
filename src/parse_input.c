@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 20:29:13 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/27 20:32:18 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/27 23:08:57 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static int	get_num(char *str)
 			return (0);
 		value = (value * 10) + str[i++] - 48;
 	}
+    if (str[i] != '\0')
+		return (0);
 	value *= sign;
 	return (value);
 }

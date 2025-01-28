@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 22:03:14 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/11 16:43:14 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/27 22:13:55 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ char	*ft_strjoin_ed(char const *s1, char const *s2, int len2)
 	return (str);
 }
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
+// size_t	ft_strlen(const char *str)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (str[i])
-	{
-		++i;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		++i;
+// 	}
+// 	return (i);
+// }
 
 size_t	check_endline(char *buffer)
 {

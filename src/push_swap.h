@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 18:13:26 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/27 20:33:16 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/28 13:54:21 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,9 @@ void		sort_three(t_stacks *stacks);
 void		get_cheapest(t_stacks *stacks, t_ops *ops);
 void		sort_b(t_stacks *stacks, t_ops *ops);
 void		push_all_to_a(t_stacks *stacks);
+
+// bonus
+void		init_stacks_and_execute(int *array, int size);
+
 
 #endif

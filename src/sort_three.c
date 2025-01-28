@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:04:06 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/27 19:05:38 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/27 22:30:04 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sort_three(t_stacks *stacks)
 {
 	if (stacks->stack_a->head->data == 0)
 		sort_three_0first(stacks);
-	if (stacks->stack_a->head->data == 1)
+	else if (stacks->stack_a->head->data == 1)
 		sort_three_1first(stacks);
 	else if (stacks->stack_a->head->next->data == 0)
 	{

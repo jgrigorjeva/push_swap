@@ -6,7 +6,7 @@
 #    By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/17 15:05:03 by jgrigorj          #+#    #+#              #
-#    Updated: 2025/01/11 17:03:54 by jgrigorj         ###   ########.fr        #
+#    Updated: 2025/01/27 23:25:31 by jgrigorj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,12 +55,10 @@ $(NAME): $(OBJ) $(PRINTF_OBJ)
 
 # Clean up object files
 clean:
-	@echo "Cleaning object files..."
 	rm -f $(OBJ) $(PRINTF_OBJ)
 
 # Clean up both object files and the library
 fclean: clean
-	@echo "Cleaning everything (object files and library)..."
 	rm -f $(NAME)
 
 # Rebuild everything from scratch
