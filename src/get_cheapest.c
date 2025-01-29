@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 19:40:17 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/27 19:47:15 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/28 22:25:07 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	get_cheapest(t_stacks *stacks, t_ops *ops)
 	oper_count = get_oper_count(stacks, current->data, i, ops);
 	if (!oper_count)
 	{
-		return ;
 		free_operations(temp_ops);
+		return ;
 	}
 	while (i++ < stacks->stack_a->size - 1)
 	{

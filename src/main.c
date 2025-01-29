@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/27 21:33:48 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/29 21:28:37 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(int argc, char **argv)
 	array = (int *)malloc(sizeof(int) * size);
 	if (!array)
 		return (1);
-	check_input(argc, argv, array);
+	check_input(argc, argv, array, &size);
 	if (!normalize_array(array, size))
 		init_and_sort_stack(array, size);
 	free (array);

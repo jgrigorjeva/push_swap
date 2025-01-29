@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 18:13:26 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/28 13:54:21 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/29 21:29:00 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void		swap(t_stack *stack);
 
 // checks
 void		check_duplicates(int size, int *array);
-void		check_input(int argc, char **argv, int *array);
+void		check_input(int argc, char **argv, int *array, int *size);
 int			check_stack_order(t_stack *stack);
 
 // error
