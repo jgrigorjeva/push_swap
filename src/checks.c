@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 20:10:24 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/29 21:39:36 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/29 23:48:55 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,6 @@ void	check_duplicates(int size, int *array)
 		}
 		i++;
 	}
-}
-
-// only considering the input in the form of separate numbers,
-// a single string is not accepted
-void	check_input(int argc, char **argv, int *array, int *size)
-{
-	// int	size;
-
-	if (argc < 3)
-		error();
-	// size = argc - 1;
-	populate_array(argv, array, *size);
-	check_duplicates(*size, array);
 }
 
 int	check_stack_order(t_stack *stack)

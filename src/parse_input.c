@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 20:29:13 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/27 23:08:57 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/30 00:08:56 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,27 @@ static int	get_num(char *str)
 			return (0);
 		value = (value * 10) + str[i++] - 48;
 	}
-    if (str[i] != '\0')
+	if (str[i] != '\0')
 		return (0);
-	value *= sign;
-	return (value);
+	return (value * sign);
 }
 
-void	populate_array(char **argv, int *array, int size)
+void	populate_arr(char **temp_arr, int *array, int size)
 {
 	int	i;
 
 	i = 0;
 	while (i < size)
 	{
-		array[i] = get_num(argv[i + 1]);
-		if (get_num(argv[i + 1]) == 0 && \
-		!(argv[i + 1][0] == '0' && argv[i + 1][1] == '\0'))
+		array[i] = get_num(temp_arr[i]);
+		if (get_num(temp_arr[i]) == 0 && \
+		!(temp_arr[i][0] == '0' && temp_arr[i][1] == '\0'))
 		{
 			free(array);
+			i = 0;
+			while (temp_arr[i])
+				free(temp_arr[i++]);
+			free(temp_arr);
 			error();
 		}
 		i++;
@@ -72,4 +75,53 @@ int	populate_stack(int *array, t_stack *stack, int size)
 		i++;
 	}
 	return (1);
+}
+
+char	**parse_input(char *argv, int *size)
+{
+	char	**temp_array;
+	int		i;
+
+	temp_array = ft_split(argv, ' ');
+	if (!temp_array)
+		exit (1);
+	*size = 0;
+	while (temp_array[*size])
+		(*size)++;
+	if (*size < 2)
+	{
+		i = 0;
+		while (temp_array[i])
+			free(temp_array[i++]);
+		free(temp_array);
+		error();
+	}
+	return (temp_array);
+}
+
+char	**get_input(int argc, char **argv, int *size)
+{
+	char	**temp_array;
+	int		i;
+
+	temp_array = NULL;
+	if (argc < 2)
+		error();
+	else if (argc == 2)
+		temp_array = parse_input(argv[1], size);
+	else
+	{
+		temp_array = malloc(sizeof(char *) * argc);
+		if (!temp_array)
+			exit (1);
+		i = 0;
+		while (i < argc - 1)
+		{
+			temp_array[i] = ft_strdup(argv[i + 1]);
+			i++;
+		}
+		temp_array[i] = NULL;
+		*size = argc - 1;
+	}
+	return (temp_array);
 }

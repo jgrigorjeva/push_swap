@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 21:51:04 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/29 21:28:37 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/29 23:48:22 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,22 @@ void	init_and_sort_stack(int *array, int size)
 
 int	main(int argc, char **argv)
 {
-	int	*array;
-	int	size;
+	int		*array;
+	char	**temp_array;
+	int		size;
+	int		i;
 
-	size = argc - 1;
+	temp_array = get_input(argc, argv, &size);
 	array = (int *)malloc(sizeof(int) * size);
 	if (!array)
 		return (1);
-	check_input(argc, argv, array, &size);
+	populate_arr(temp_array, array, size);
+	check_duplicates(size, array);
 	if (!normalize_array(array, size))
 		init_and_sort_stack(array, size);
+	i = 0;
+	while (temp_array[i])
+		free(temp_array[i++]);
+	free(temp_array);
 	free (array);
 }

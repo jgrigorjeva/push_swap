@@ -6,7 +6,7 @@
 /*   By: jgrigorj <jgrigorj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 18:13:26 by jgrigorj          #+#    #+#             */
-/*   Updated: 2025/01/29 21:29:00 by jgrigorj         ###   ########.fr       */
+/*   Updated: 2025/01/30 00:03:37 by jgrigorj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ typedef struct s_pair
 	int	original_index;
 }	t_pair;
 int			normalize_array(int *array, int size);
-void		populate_array(char **argv, int *array, int size);
+void		populate_arr(char **argv, int *array, int size);
 
 // structures inicialization and handling
 t_stacks	*init_stacks(void);
@@ -79,9 +79,12 @@ void		push_a(t_stacks *stacks);
 void		push_b(t_stacks *stacks);
 void		swap(t_stack *stack);
 
+// input handling
+char		**parse_input(char *argv, int *size);
+char		**get_input(int argc, char **argv, int *size);
+
 // checks
 void		check_duplicates(int size, int *array);
-void		check_input(int argc, char **argv, int *array, int *size);
 int			check_stack_order(t_stack *stack);
 
 // error
@@ -97,7 +100,7 @@ int			get_oper_count(t_stacks *stacks, int num, \
 			int orig_index, t_ops *ops);
 
 // main processes
-void		populate_array(char **argv, int *array, int size);
+void		populate_arr(char **argv, int *array, int size);
 int			populate_stack(int *array, t_stack *stack, int size);
 void		init_and_sort_stack(int *array, int size);
 void		sort_stack(t_stacks *stacks);
@@ -109,6 +112,5 @@ void		push_all_to_a(t_stacks *stacks);
 
 // bonus
 void		init_stacks_and_execute(int *array, int size);
-
 
 #endif
